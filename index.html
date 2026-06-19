@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>乐鱼体育 – 信息页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f0f2f5;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 2.4rem 1.2rem;
+    }
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    /* 主视觉卡片 — hero */
+    .hero-card {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      padding: 3rem 2.2rem 2.8rem;
+      margin-bottom: 2.4rem;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0b1628;
+      margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #475569;
+      border-left: 4px solid #2563eb;
+      padding-left: 1rem;
+      margin-top: 0.6rem;
+      margin-bottom: 1.4rem;
+    }
+    .hero-text {
+      max-width: 680px;
+      color: #334155;
+      margin-top: 0.6rem;
+    }
+    .hero-text p {
+      margin-bottom: 0.8rem;
+    }
+    .hero-text a {
+      color: #1d4ed8;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .hero-text a:hover {
+      border-bottom-color: #1d4ed8;
+    }
+
+    /* 通用卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.4rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 1px 0 rgba(0,0,0,0.02);
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #e9edf2;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      transform: translateY(-2px);
+    }
+    .card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      color: #0f172a;
+    }
+    .card p {
+      font-size: 0.96rem;
+      color: #475569;
+      margin-bottom: 0.5rem;
+    }
+    .card ul {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+    .card li {
+      font-size: 0.94rem;
+      color: #3c4a5e;
+      padding: 0.25rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    /* 适合人群 — 三栏卡片 */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+      margin-bottom: 2.4rem;
+    }
+    .audience-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.6rem 1.2rem;
+      border: 1px solid #e5e9ef;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .audience-card h4 {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+    .audience-card p {
+      font-size: 0.92rem;
+      color: #4b5563;
+    }
+
+    /* 链接段落卡片 */
+    .link-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2rem 2.2rem;
+      border: 1px solid #e3e8ef;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      margin-bottom: 2.4rem;
+    }
+    .link-section h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #0b1628;
+      margin-bottom: 1rem;
+    }
+    .link-section p {
+      color: #384351;
+      margin-bottom: 0.8rem;
+      font-size: 0.98rem;
+    }
+    .link-section a {
+      color: #1e3a8a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.15s;
+    }
+    .link-section a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* FAQ摘要卡片 */
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 2rem 2rem;
+      border: 1px solid #e3e8ef;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      margin-bottom: 2rem;
+    }
+    .faq-mini h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    .faq-item {
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid #f0f2f6;
+    }
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #1e293b;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      color: #4a5a72;
+      font-size: 0.93rem;
+    }
+
+    /* 底部 */
+    .footer-note {
+      font-size: 0.85rem;
+      color: #6b7a90;
+      text-align: center;
+      border-top: 1px solid #dce1e8;
+      padding-top: 2rem;
+      margin-top: 1.2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 820px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      .hero-card {
+        padding: 2rem 1.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero-title {
+        font-size: 1.6rem;
+      }
+      .link-section {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 主视觉卡片 -->
+  <div class="hero-card">
+    <h1 class="hero-title">乐鱼体育 · 稳定信息与说明</h1>
+    <div class="hero-sub">从页面入口到内容结构，梳理使用前的要点</div>
+    <div class="hero-text">
+      <p>对于日常希望快速获取体育资讯或浏览相关内容的用户，一个清晰、稳定的入口能省去反复查找的麻烦。本页整理了与 <a href="https://page-cn-leyu.com.cn">乐鱼体育</a> 有关的功能卡片、适用场景以及常见疑问摘要，方便您从整体上把握页面布局。</p>
+      <p>以下内容基于常规信息整合，不包含任何操作引导或承诺，仅作为结构化的参考页。</p>
+    </div>
+  </div>
+
+  <!-- 用途卡片 两列 -->
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">📋</span>
+      <h3>快速浏览与信息聚合</h3>
+      <p>页面以板块化方式展示体育相关条目，便于用户按兴趣区域查找内容。卡片式设计让信息层级更清晰，减少视觉干扰。</p>
+      <ul>
+        <li>分类陈列常见体育项目</li>
+        <li>重点资讯使用卡片高亮</li>
+        <li>页面结构固定，适合长期使用</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔗</span>
+      <h3>稳定访问参考</h3>
+      <p>为有固定访问习惯的用户提供一致的页面布局说明。页面不依赖动态跳转，内容以静态说明为主，保持长期可读性。</p>
+      <ul>
+        <li>无频繁改版影响</li>
+        <li>条目说明简洁直接</li>
+        <li>适合作为备忘或引导页</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 适合人群 (三栏) -->
+  <h2 style="font-weight:600; font-size:1.3rem; margin-bottom:0.8rem; color:#0b1628;">适合人群一览</h2>
+  <div class="audience-grid">
+    <div class="audience-card">
+      <h4>🏟️ 体育爱好者</h4>
+      <p>日常关注体育动态，希望有一个稳定的页面作为信息起点，减少重复搜索。</p>
+    </div>
+    <div class="audience-card">
+      <h4>🧭 新用户</h4>
+      <p>初次接触相关页面，需要一份简洁的功能说明，快速了解内容分布。</p>
+    </div>
+    <div class="audience-card">
+      <h4>📌 固定访问者</h4>
+      <p>已熟悉主要内容，希望保留一份结构清晰、无过多干扰的说明页作为参考。</p>
+    </div>
+  </div>
+
+  <!-- 自然链接段落卡片 (嵌入链接) -->
+  <div class="link-section">
+    <h2>关于此页与乐鱼体育的关联</h2>
+    <p>本介绍页旨在辅助理解 <a href="https://page-cn-leyu.com.cn">乐鱼体育</a> 的页面构成与设计意图。页面中所有卡片、列表以及说明均基于常见的信息展示逻辑整理，不涉及具体功能指引。</p>
+    <p>如果希望直接浏览主站内容，您可以通过上方链接前往 <a href="https://page-cn-leyu.com.cn">乐鱼体育</a> 查看完整页面。此处仅提供文字化的结构概览，方便在访问前对内容有所预期。</p>
+  </div>
+
+  <!-- FAQ 摘要卡片 -->
+  <div class="faq-mini">
+    <h3>常见疑问摘要</h3>
+    <div class="faq-item">
+      <span class="faq-q">问：这个说明页是官方页面吗？</span>
+      <div class="faq-a">不是。此页为独立整理的信息说明，用于概括页面布局与内容方向，不代替原站功能。</div>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">问：卡片中的信息会实时更新吗？</span>
+      <div class="faq-a">卡片内容基于当前页面结构编写，如主站后续调整卡片分类，本说明可能无法即时同步。</div>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">问：为什么强调“稳定入口”？</span>
+      <div class="faq-a">对于固定访问场景，统一且变化频率低的入口能减少记忆成本，本页描述的结构即围绕此原则展开。</div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footer-note">
+    信息卡片页 · 内容整理于公开说明 · 仅供参考
+  </div>
+
+</div>
+</body>
+</html>

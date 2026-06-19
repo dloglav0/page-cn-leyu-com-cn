@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dloglav0.github.io/page-cn-leyu-com-cn/sitemap.xml

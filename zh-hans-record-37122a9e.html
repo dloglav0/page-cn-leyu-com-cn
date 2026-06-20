@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料索引·彩经网 | 信息整理说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #fce7cd 0%, #fdebd0 50%, #f8e0c0 100%);
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.7;
+      color: #3b2e1e;
+    }
+
+    .card {
+      max-width: 860px;
+      width: 100%;
+      background: #fffdf9;
+      border-radius: 36px 12px 36px 12px;
+      box-shadow: 0 10px 30px rgba(160, 120, 70, 0.16), 0 4px 12px rgba(0,0,0,0.04);
+      padding: 2.8rem 2.4rem;
+      margin-top: 1.5rem;
+      transition: box-shadow 0.25s;
+    }
+
+    .card:hover {
+      box-shadow: 0 14px 36px rgba(140, 100, 50, 0.14);
+    }
+
+    .hero-short {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #7b5d3e;
+      border-left: 4px solid #d9b382;
+      padding-left: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-short strong {
+      font-weight: 550;
+      color: #4b3621;
+    }
+
+    .intro-block p {
+      margin-bottom: 1.1rem;
+    }
+
+    .feature-list {
+      margin: 1.8rem 0 1.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      background: #faf3e9;
+      border-radius: 50px 12px 12px 50px;
+      padding: 0.75rem 1.2rem 0.75rem 2rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+      font-size: 1rem;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .feature-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0.9rem;
+      color: #b28253;
+    }
+
+    .button-link {
+      display: inline-block;
+      background: #e5d0b7;
+      color: #3a2c1b;
+      text-decoration: none;
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 1rem;
+      border: 1px solid #cfb699;
+      box-shadow: 0 2px 6px rgba(110, 75, 35, 0.06);
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.3px;
+    }
+
+    .button-link:hover {
+      background: #dbbc98;
+      border-color: #b9946b;
+      transform: scale(1.02);
+    }
+
+    .para-sign {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e4d6c4;
+      font-size: 0.95rem;
+      color: #62513b;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .small-note {
+      font-size: 0.88rem;
+      color: #7f6b51;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 2rem 1.4rem;
+        border-radius: 28px 8px 28px 8px;
+      }
+      .hero-short {
+        font-size: 1.3rem;
+        padding-left: 1rem;
+      }
+      .feature-list li {
+        padding-left: 1.6rem;
+        border-radius: 30px 10px 10px 30px;
+      }
+      .feature-list li::before {
+        left: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="hero-short">
+      从散落的数据，到有秩序的索引。<br>
+      这里是关于资料的整理笔记。
+    </div>
+
+    <div class="intro-block">
+      <p>
+        在信息量不断增长的环境里，如何为特定领域建立一份干净、可追溯的索引，变成了最基础也最容易被忽略的事。过去一年多，我陆续收集了与数字趋势、历史统计、行业分布相关的公开资料，把它们按来源、时间、地域做了初步归类。过程中发现，很多有价值的内容其实分散在各自独立的站点里，缺少一个聚合的、平实的整理页面。
+      </p>
+      <p>
+        于是有了这个页面——它不是门户，更像是一份公开的书签夹。从目录结构到内容摘要，都尽量保留原始信息的语气，不做过多的二次阐释。如果你也在找某个方向的数据脉络，或许这里能帮你省下一些检索时间。
+      </p>
+    </div>
+
+    <ul class="feature-list">
+      <li><strong>按主题归档</strong> —— 分为行业概览、区域指标、历史对照、术语笔记四个模块，每个模块附有来源标记。</li>
+      <li><strong>时效标注</strong> —— 每条索引都标了数据截止日期或收录时间，方便判断参考价值。</li>
+      <li><strong>短摘要+出处</strong> —— 每条记录包含一句话摘要与原始链接，不堆砌无来源的描述。</li>
+      <li><strong>定期增量更新</strong> —— 每两个月补充一批新收录的内容，并在更新日志中说明。</li>
+    </ul>
+
+    <p>
+      这份索引目前仍在逐步补充。如果你对其中某个分类有更细致的资料，或者发现链接失效，欢迎通过页面底部的联系方式告知。所有索引内容均来自公开可访问的来源，整理过程中尽量保持了原貌。
+    </p>
+
+    <div style="margin: 1.8rem 0 1rem;">
+      <p>
+        其中一部分资料索引直接关联到 <a href="https://zh-hans-caijing.com" class="button-link" style="display:inline; background:none; border:none; padding:0; box-shadow:none; text-decoration:underline; color:#7f5d3a; font-weight:500;">彩经网</a> 的公开栏目，该站点提供了较为系统的分类导航，可以作为交叉检索的参考点。
+      </p>
+    </div>
+
+    <div class="para-sign">
+      <span>最后整理：2025年2月</span>
+      <span class="small-note">收录条目：47 条 · 归档模块：4</span>
+    </div>
+
+    <div style="margin-top: 2.2rem; text-align: center;">
+      <a href="https://zh-hans-caijing.com" class="button-link">彩经网</a>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.88rem; color: #75644a; text-align: center; max-width: 480px; margin-left: auto; margin-right: auto;">
+      索引页本身不存储任何原始数据，仅提供指向公开资源的链接。使用前请自行核实信息时效性与准确性。
+    </p>
+  </div>
+</body>
+</html>
